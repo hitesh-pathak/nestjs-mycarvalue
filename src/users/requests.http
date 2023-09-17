@@ -1,0 +1,48 @@
+### Sign up for new user
+POST http://localhost:3000/auth/signup
+Content-Type: application/json
+
+{
+  "email": "email3@xyz.com",
+  "password": "somepassword",
+  "hack": true
+}
+
+
+### Sign in as existing user
+POST http://localhost:3000/auth/signin
+Content-Type: application/json
+
+{
+  "email": "email3@xyz.com",
+  "password": "somepassword",
+  "hack": true
+}
+
+
+### Get currently signed in user
+GET http://localhost:3000/auth/whoami
+
+
+### logout
+POST http://localhost:3000/auth/signout
+
+### Get a user record by ID
+GET http://localhost:3000/auth/4
+
+
+### Find all users by a given email
+GET http://localhost:3000/auth?email=updatedemail@xyz.com
+
+
+### Delete a user by given id
+DELETE http://localhost:3000/auth/3
+
+
+### Update a user by id
+PATCH http://localhost:3000/auth/1
+Content-Type: application/json
+
+{
+  "password": "updated..password"
+}
