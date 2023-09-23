@@ -1,6 +1,7 @@
 # environment config
 .env.development
 .env.test
+config.sh
 
 # compiled output
 /dist

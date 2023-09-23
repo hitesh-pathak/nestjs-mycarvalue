@@ -25,7 +25,7 @@ export class TypeOrmConfigService implements TypeOrmOptionsFactory {
           database: this.configService.get<string>('DB_NAME'),
           autoLoadEntities: true,
           migrationsRun: true,
-          migrations: [path.resolve(__dirname, '..') + '/migrations/*.ts'],
+          migrations: [path.resolve(__dirname, '..') + '/migrations/*.{js,ts}'],
         };
 
       case 'production':
@@ -35,7 +35,7 @@ export class TypeOrmConfigService implements TypeOrmOptionsFactory {
           url: process.env.DATABASE_URL,
           autoLoadEntities: true,
           migrationsRun: true,
-          migrations: [path.resolve(__dirname, '..') + '/migrations/*.ts'],
+          migrations: [path.resolve(__dirname, '..') + '/migrations/*.{js,ts}'],
           ssl: {
             rejectUnauthorized: false,
           },
