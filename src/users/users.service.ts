@@ -19,9 +19,6 @@ export class UsersService {
       throw new BadRequestException('Invalid user Id, can\'t find the user')
     }
     const user = await this.repo.findOneBy({id});
-    if(!user) {
-      throw new NotFoundException('No such user exists');
-    }
     return user;
   }
 
